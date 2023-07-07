@@ -21,6 +21,7 @@ body{
   font-weight: 400;
   background-color: var(--white);
   height: 100vh;
+  color: var(--black);
 }
 body::-webkit-scrollbar {
   display: none;
@@ -81,10 +82,10 @@ aside{
   height: 100vh;
   width: 25%;
   right: -30%;
-  transition: all .3s;
+  transition: all .4s;
   direction: ltr;
-  z-index: 11 !important;
-  padding-bottom: 300px;
+  z-index: 13 !important;
+  padding-bottom: 220px;
 }
 aside::-webkit-scrollbar {
   display: none;
@@ -361,8 +362,17 @@ aside img{
   padding-top: 10px;
   color: var(--white);
 }
+.aside-body a{
+  color: var(--pink) !important;
+  transition: all .3s;
+}
+.aside-body a:hover{
+  color: var(--white) !important;
+  text-decoration: underline !important;
+}
 .aside-body h3{
   color: var(--white);
+  font-size: 1.3rem;
 }
 .aside-body table{
   margin-bottom: 16px;
@@ -429,15 +439,52 @@ aside img{
   display: inline-block;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 40px;
 }
 .galeri-wrapper .img-wrapper{
   width: 100% !important;
   height: auto !important;
   overflow: hidden;
   border: solid 1px var(--purple);
+  position: relative;
+}
+.img-wrapper .img-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(74, 68, 83, 0.39);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+  border: 1px solid rgba(74, 68, 83, 0.3);
+  opacity: 0;
+  transition: ease-in .3s;
+  z-index: 12 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--white);
+}
+.img-wrapper .img-info h4{
+  line-height: initial;
+  text-align: center;
+}
+.img-wrapper .img-info a{
+  display: none;
+  color: var(--white) !important;
 }
 .galeri-wrapper .img-wrapper:hover img{
   scale: 1.2;
+}
+.galeri-wrapper .img-wrapper:hover .img-info{
+  opacity: 1;
+}
+.galeri-wrapper .img-wrapper:hover a{
+  display: inline;
 }
 .galeri-wrapper .img-wrapper img{
   width: 100% !important;
@@ -471,6 +518,15 @@ aside img{
 /* ============== REFERENSI ============= */
 .referensi{
   padding: 20px 80px;
+}
+.referensi ol{
+  display: grid;
+  column-count: 2;
+  display: inline-block;
+}
+.referensi ol li{
+  width: 100%;
+  font-size: 11px !important;
 }
 
 /* ========== FOOTER============ */
@@ -540,6 +596,7 @@ footer{
     margin: 0;
   }
 
+
   /* ================= HOME=================== */
   .home{
     flex-wrap: wrap;
@@ -553,6 +610,16 @@ footer{
     font-size: 1.1rem;
     text-align: center;
   }
+  .home .image .costume-list .potrait{
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
+  }
+  .home .image .costume-list .potrait:hover{
+    border-width: 3px;
+    scale: 1.3;
+    border-color: var(--bright-purple);
+  }
 
   /* ================= MEDIA =================== */
   .media h2{
@@ -563,6 +630,21 @@ footer{
   }
   .musik-wrapper{
     grid-template-columns: 1fr;
+  }
+
+  .referensi{
+    padding: 10px 30px;
+  }
+  .referensi ol{
+    display: block;
+    column-count: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    word-wrap: break-word;
+  }
+  .referensi ol li{
+    width: 100%;
+    text-align: start;
   }
 
 

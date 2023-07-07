@@ -1,13 +1,15 @@
 $(function () {
-  $(window).scrollTop(0);
-  $(window).scroll(function () {
-    let ot_height =  document.getElementById('ot').offsetTop;
-    let con_height = document.getElementById('content').scrollTop + window.innerHeight + 100;
-    if(ot_height > con_height){
-      console.log("trumin");
-      $(window).scrollTop(0);
-    }
-  });
+  if (window.innerWidth > 1000){
+    $(window).scrollTop(0);
+    $(window).scroll(function () {
+      let ot_height =  document.getElementById('ot').offsetTop;
+      let con_height = document.getElementById('content').scrollTop + window.innerHeight + 100;
+      if(ot_height > con_height){
+        console.log("trumin");
+        $(window).scrollTop(0);
+      }
+    });
+  }
   let musik_original = [
     {
       link: 'pMNnZIz6YYM',
@@ -33,7 +35,7 @@ $(function () {
       link: 't1yXDcuwzpY',
       title: '今宵はHalloween Night!'
     },
-  ]
+  ];
   let aside = $('aside');
   let content = $('#content');
   let home = $('.home');
@@ -58,7 +60,7 @@ $(function () {
     });
   }
   $(content).scroll(function () {
-    if (window.innerWidth > 780){
+    if (window.innerWidth > 1000){
       aside.toggleClass('show', $(this).scrollTop() > nav.outerHeight() + home.outerHeight());
       if($(this).scrollTop() > nav.outerHeight() + 20){
         aside.addClass('show');
@@ -140,15 +142,6 @@ $(function () {
   $('#nav-menu-mobile a').on('click', function(){
     $('#nav-menu-mobile').removeClass('nav-menu-mobile-show');
   });
-  for (let index = 1; index <= 16; index++) {
-    $('.galeri-wrapper').append(`<div class="img-wrapper"><img loading="lazy" src="assets/img/ilust/ilust (${index}).jpg"></div>`);
-  }
-  for (let index = 1; index <= 4; index++) {
-    $('.galeri-wrapper').append(`<div class="img-wrapper"><img loading="lazy" src="assets/img/concept-ilust/${index}.jpg"></div>`);
-  }
-  for (let index = 1; index <= 5; index++) {
-    $('.galeri-wrapper').append(`<div class="img-wrapper"><img loading="lazy" src="assets/img/collabs/${index}.jpg"></div>`);
-  }
   musik_original.forEach(musik => {
     $('.musik-wrapper').append(`
     <div class="musik">
