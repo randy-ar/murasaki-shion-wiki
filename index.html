@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Murasaki Shion</title>
-  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="Shion Icon" href="assets/img/icon.ico" type="image/x-icon"> 
 </head>
@@ -45,28 +45,28 @@
       <article id="home">
         <div class="home">
           <div class="image">
-            <div class="costume-list">
-              <div class="potrait" onclick="potraitOnClick('Murasaki-Shion_pr-img_01.png')">
+            <div class="costume-list" id="costume-list">
+              <div id="pot-button-1" class="potrait" onclick="potraitOnClick('Murasaki-Shion_pr-img_01.png', 'pot-button-1')">
                 <div class="glass"></div>
                 <img src="assets/img/Murasaki-Shion_pr-img_01-pot.png" alt="first" class="img-pot">
               </div>
-              <div class="potrait"  onclick="potraitOnClick('second.png')">
+              <div id="pot-button-2" class="potrait"  onclick="potraitOnClick('second.png', 'pot-button-2')">
                 <div class="glass"></div>
                 <img src="assets/img/second-pot.png" alt="second" class="img-pot">
               </div>
-              <div class="potrait"  onclick="potraitOnClick('third.png')">
+              <div id="pot-button-3" class="potrait"  onclick="potraitOnClick('third.png', 'pot-button-3')">
                 <div class="glass"></div>
                 <img src="assets/img/third-pot.png" alt="third" class="img-pot">
               </div>
-              <div class="potrait"  onclick="potraitOnClick('fourth.png')">
+              <div id="pot-button-4" class="potrait"  onclick="potraitOnClick('fourth.png', 'pot-button-4')">
                 <div class="glass"></div>
               <img src="assets/img/fourth-pot.png" alt="fourth" class="img-pot">
               </div>
-              <div class="potrait"  onclick="potraitOnClick('fifth.png')">
+              <div id="pot-button-5" class="potrait"  onclick="potraitOnClick('fifth.png', 'pot-button-5')">
                 <div class="glass"></div>
                 <img src="assets/img/fifth-pot.png" alt="fifth" class="img-pot">
               </div>
-              <div class="potrait"  onclick="potraitOnClick('sixth.png')">
+              <div id="pot-button-6" class="potrait"  onclick="potraitOnClick('sixth.png', 'pot-button-6')">
                 <div class="glass"></div>
                 <img src="assets/img/sixth-pot.png" alt="sixth" class="img-pot">
               </div>
@@ -446,7 +446,7 @@
 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="assets/js/app.min.js"></script>
+  <script src="assets/js/app.js"></script>
   <script src="assets/js/fetchImage.min.js"></script>
 </body>
 </html>
