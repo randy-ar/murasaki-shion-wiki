@@ -1,3 +1,4 @@
+var isAnimating = false;
 $(function () {
   if (window.innerWidth > 1000){
     $(window).scrollTop(0);
@@ -153,11 +154,33 @@ $(function () {
     `);
   });
 });
-function potraitOnClick(image){
-  $('#potrait').attr('src', `assets/img/${image}`);
-  $('#potrait').addClass('potrait-in');
-  setTimeout(() => {
-    $('#potrait').removeClass('potrait-in');
-  }, 1000);
-
+function potraitOnClick(image, id){
+  if(isAnimating){
+    return;
+  }
+  isAnimating = true
+  $('#costume-list').children().removeClass('active');
+  function changeimg(callback = () =>{}) {
+    $(`#${id}`).addClass('active');
+    $('#potrait').attr('src', `assets/img/${image}`);
+    callback();
+  }
+  function imgpop() {
+    $('#potrait').animate({
+      'opacity' : '1',
+      'scale': '1',
+    }, 0);
+    $('#potrait').animate({
+      'opacity' : '.3',
+      'scale': '1.04',
+    }, 100);
+    $('#potrait').animate({
+      'opacity' : '1',
+      'scale': '1',
+    }, 300);
+    setTimeout(() => {
+      isAnimating = false;
+    }, 400);
+  }
+  changeimg(imgpop());
 }
